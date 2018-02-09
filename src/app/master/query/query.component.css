@@ -1,0 +1,18 @@
+.navbar-light{
+	background-color: #004085;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: #fff;
+}
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link{
+	color: #fff;
+	letter-spacing: 1.2px;
+	font-weight: 900;
+}
+li.nav-item.active {
+    background: rgba(14, 79, 148, 0.99);
+    opacity: 0.5;
+}

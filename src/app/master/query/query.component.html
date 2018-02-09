@@ -1,0 +1,54 @@
+<div class="container-fluid">
+	<header class="masthead">
+		<h3 class="text-muted">Query Poll</h3>
+		<nav class="navbar navbar-expand-md navbar-light  rounded mb-3">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+		    <ul class="navbar-nav text-md-center nav-justified w-100">
+		      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+		        <a class="nav-link" [routerLink]="['/query']">Add <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+		        <a class="nav-link" [routerLink]="['/show']">View</a>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+	</header>
+
+	<div class="container">
+		<div class="card">
+			<h4 class="card-header">Create a Query</h4>
+			<div class="card-body">
+				<h4 class="card-title">  </h4>
+				<form class="card-text" #form="ngForm">
+					<div class="form-group row">
+						<label for="heading" class="col-sm-2 col-form-label">Title</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="heading" placeholder="What's your question? Be specific." name="heading" value="" [(ngModel)]="dataModel.title">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="heading" class="col-sm-2 col-form-label">Query</label>
+						<div class="col-sm-10">
+							<textarea name="edittor" [froalaEditor]="options" [(froalaModel)]="dataModel.summery"></textarea>
+						</div>
+						<!-- <div [froalaView]="dataModel.summery"></div> -->
+					</div>
+					<div class="form-group row">
+						<label for="answer" class="col-sm-2 col-form-label">Answer</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" name="answer" placeholder="Mention your answer" [(ngModel)]="dataModel.answer"></textarea>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary" (click)="save(form)">Save Query</button>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- /container-fluid -->

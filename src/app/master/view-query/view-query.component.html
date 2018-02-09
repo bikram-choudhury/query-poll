@@ -1,0 +1,65 @@
+<div class="container-fluid">
+	<header class="masthead">
+		<h3 class="text-muted">Query Poll</h3>
+		<nav class="navbar navbar-expand-md navbar-light  rounded mb-3">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+		    <ul class="navbar-nav text-md-center nav-justified w-100">
+		      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+		        <a class="nav-link" [routerLink]="['/query']">Add <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+		        <a class="nav-link" [routerLink]="['/show']">View</a>
+		      </li>
+
+		    </ul>
+		  </div>
+		</nav>
+	</header>
+
+	<div class="container">
+	<div class="row">
+		<div class="card" [ngClass]="{ 'col-md-6': queryContent,'col-md-8': !queryContent }" >
+			<h4 class="card-header">View all Query</h4>
+			<div class="card-body">
+				<h4 class="card-title">  </h4>
+				
+				<table class="table table-bordered query-view">
+					<thead>
+						<tr>
+							<th class="slno">#</th>
+							<th class="title">Title</th>
+							<th class="answer">Answer</th>
+							<th class="action">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let que of queryResult; index as count; ">
+							<td class="slno">{{count+1}}</td>
+							<td class="title">{{que.title}}</td>
+							<td class="answer">{{que.answer}}</td>
+							<td class="action">
+								<button class="btn btn-secondary" (click)="viewQuery(que._id)"><i class="fa fa-eye" aria-hidden="true"></i></button>
+								<button class="btn btn-waring" (click)="editQuery(que._id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+								<button class="btn btn-danger" (click)="deleteQuery(que._id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
+		</div>
+		<div class="card col-md-5" *ngIf="queryContent">
+			<h4 class="card-header">View all Query</h4>
+			<div class="card-body">
+				<h4 class="card-title">  </h4>
+				<div class="row" [innerHtml]="queryContent"></div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+</div>
+<!-- /container-fluid -->

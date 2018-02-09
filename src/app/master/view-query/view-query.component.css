@@ -1,0 +1,32 @@
+.navbar-light{
+	background-color: #004085;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: #fff;
+}
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link{
+	color: #fff;
+	letter-spacing: 1.2px;
+	font-weight: 900;
+}
+li.nav-item.active {
+    background: rgba(14, 79, 148, 0.99);
+    opacity: 0.5;
+}
+
+
+.query-view table th.slno,.query-view table td.slno{
+	width: 10%;
+}
+.query-view table th.title,.query-view table td.title{
+	width: 30%;
+}
+.query-view table th.answer,.query-view table td.answer{
+	width: 30%;
+}
+.query-view table th.action,.query-view table td.action{
+	width: 30%;
+}
